@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Income from './Components/Income'
+import RecurringExpenses from './Components/RecurringExpenses'
 
 class App extends Component {
   render(){
@@ -10,6 +11,7 @@ class App extends Component {
           <p>This works</p>
         </header>
         <Income />
+        <RecurringExpenses />
       </>
     )
   }
