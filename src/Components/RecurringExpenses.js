@@ -15,7 +15,7 @@ class RecurringExpenses extends Component {
                     )
                 })}
                 <label htmlFor="addExpense">Add More</label>
-                <select name="addExpense" defaultValue="BLANK" onChange={this.createExpense} >
+                <select name="addExpense" defaultValue="BLANK" onChange={this.props.createExpense} >
                     <option value="BLANK" disabled={true} >Add Other Expenses</option>
                     <option value="Rent">Rent</option>
                     <option value="Util">Util</option>
