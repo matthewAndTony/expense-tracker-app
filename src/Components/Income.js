@@ -6,7 +6,7 @@ class Income extends Component {
         this.state={
             totalIncome: 0,
             addedIncome:{
-                Revenue:'',
+                Revenue:0,
             }
         }
     }
@@ -14,17 +14,24 @@ class Income extends Component {
     createIncome=(e)=>{
         console.log(e);
         let addedIncome = this.state.addedIncome;
-        addedIncome[e.target.value] = '0';
+        addedIncome[e.target.value] = 0;
         this.setState({
             addedIncome
         })
     }
 
     setAmount=(e)=>{
-        let addedIncome = this.state.addedIncome
-        addedIncome[e.target.name] = e.target.value
+        let addedIncome = this.state.addedIncome;
+        addedIncome[e.target.name] = e.target.value;
+        
+        let totalIncome = 0;
+        for (let value in addedIncome){
+            totalIncome += parseInt(addedIncome[value], 10)
+        } 
+
         this.setState({
-            addedIncome
+            addedIncome,
+            totalIncome
         })
     }
 
@@ -36,7 +43,7 @@ class Income extends Component {
                     return(
                         <div>
                             <h3>{income}</h3>
-                            <input type="text" name={income} value={this.state.addedIncome[income]} onChange={this.setAmount}/>
+                            <input type="number" name={income} value={this.state.addedIncome[income]} onChange={this.setAmount}/>
                         </div>
                     )
                 })}
