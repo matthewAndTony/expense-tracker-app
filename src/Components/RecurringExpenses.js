@@ -6,7 +6,7 @@ class RecurringExpenses extends Component {
         this.state={
             totalExpense: 0,
             addedExpense:{
-                Expenses:'',
+                Expense: 0,
             }
         }
     }
@@ -14,7 +14,7 @@ class RecurringExpenses extends Component {
     createExpense=(e)=>{
         console.log(e);
         let addedExpense = this.state.addedExpense;
-        addedExpense[e.target.value] = '0';
+        addedExpense[e.target.value] = 0;
         this.setState({
             addedExpense
         })
@@ -23,8 +23,14 @@ class RecurringExpenses extends Component {
     setAmount=(e)=>{
         let addedExpense = this.state.addedExpense
         addedExpense[e.target.name] = e.target.value
+        let totalExpense = 0;
+        for (let value in addedExpense){
+            totalExpense += parseInt(addedExpense[value], 10)
+        } 
+
         this.setState({
-            addedExpense
+            addedExpense,
+            totalExpense
         })
     }
     render() {
