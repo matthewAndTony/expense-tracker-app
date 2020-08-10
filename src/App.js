@@ -87,6 +87,11 @@ class App extends Component {
     for (let value in addedMiscExpense) {
       totalMiscExpense += parseInt(addedMiscExpense[value], 10)
     }
+
+    this.setState({
+      totalMiscExpense,
+      addedMiscExpense
+    })
   }
 //NEXT STEPS//
   //weekly savings
