@@ -3,6 +3,7 @@ import './App.css';
 import Income from './Components/Income'
 import RecurringExpenses from './Components/RecurringExpenses'
 import OneOffExpenses from './Components/OneOffExpenses'
+import Results from './Components/Results'
 
 class App extends Component {
   // Income functions
@@ -95,7 +96,8 @@ class App extends Component {
   }
 //NEXT STEPS//
   //weekly savings
-
+ 
+  
   //goals met
 
   // need to think about how to structure our data to manipulate and how much percentage of each category
@@ -109,7 +111,8 @@ class App extends Component {
         </header>
         <Income createIncome={this.createIncome} setAmount={this.setAmount} addedIncome={this.state.addedIncome} totalIncome={this.state.totalIncome} />
         <RecurringExpenses createExpense={this.createExpense} setExpenseAmount={this.setExpenseAmount} addedExpense={this.state.addedExpense} totalExpense={this.state.totalExpense} />
-        <OneOffExpenses createMiscExpense={this.createMiscExpense} setMiscAmount={this.setMiscAmount} addedMiscExpense={this.state.addedMiscExpense} totalMiscExpense={this.state.totalMiscExpense}/>
+        <OneOffExpenses createMiscExpense={this.createMiscExpense} setMiscAmount={this.setMiscAmount} addedMiscExpense={this.state.addedMiscExpense} totalMiscExpense={this.state.totalMiscExpense} />
+        <Results userResults={this.state}/>
       </>
     )
   }

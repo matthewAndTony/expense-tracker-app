@@ -31,7 +31,7 @@ class RecurringExpenses extends Component {
                     <option value="Other Expenses">Other</option>
                 </select>
                 <h2>Total Expense</h2>
-                <p>{this.props.totalExpense}</p>
+                <p>${this.props.totalExpense}</p>
             </div>
       )
   };

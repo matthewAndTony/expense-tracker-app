@@ -22,7 +22,7 @@ class Income extends Component {
                     <option value="Other Income">Other</option>
                 </select>
                 <h2>Total Income</h2>
-                <p>{this.props.totalIncome}</p>
+                <p>${this.props.totalIncome}</p>
             </div>
         )}
 }

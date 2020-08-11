@@ -55,7 +55,7 @@ class OneOffExpenses extends Component {
                     <option value="PetVet">Pet (Vet)</option>
                 </select>
                 <h2>Total Expense</h2>
-                <p>{this.props.totalMiscExpense}</p>
+                <p>${this.props.totalMiscExpense}</p>
             </div>
       )
   };
